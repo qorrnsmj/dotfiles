@@ -66,7 +66,7 @@ let g:ayu_sign_contrast=1
 let g:ayu_extended_palette=1
 
 set background=dark
-colorscheme ayu
+colorscheme jb
 
 " Paste from Clipboard
 if &term =~ "xterm"
