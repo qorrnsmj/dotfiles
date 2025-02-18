@@ -33,6 +33,10 @@ set visualbell
 set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 " Tab
 set expandtab
@@ -43,8 +47,7 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " Indent
 set smartindent
-"let g:indentLine_char = '▏'
-let g:indentLine_char = '┊'
+"let g:indentLine_char = '|'
 "let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " Search
@@ -81,3 +84,6 @@ if &term =~ "xterm"
 
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
+
+" ALE setting
+let g:ale_linters = { 'asm': [] }
