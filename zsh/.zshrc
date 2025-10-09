@@ -51,15 +51,16 @@ alias pst='ps --sort=-start_time'
 alias fwc='sudo firewall-cmd'
 alias bye='echo "Have a nice day." && exit'
 alias sudo='sudo '
+alias chess='cli-chess'
 
 abbr -S sc='screen' > /dev/null 2>&1
 abbr -S tm='tmux' > /dev/null 2>&1
 abbr -S pm='podman' > /dev/null 2>&1
+abbr -S pmc='podman-compose' > /dev/null 2>&1
 abbr -S kc='kubectl' > /dev/null 2>&1
 abbr -S mk='minikube' > /dev/null 2>&1
-
-source <(kubectl completion zsh)
-source <(minikube completion zsh)
+abbr -S hl='helm' > /dev/null 2>&1
+abbr -S cl='cilium' > /dev/null 2>&1
 
 # -------------------------------------------------------------------
 
@@ -154,3 +155,10 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light olets/zsh-abbr
+
+# Auto-Warpify
+[[ "$-" == *i* ]] && printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Linux" }}\x9c' 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
